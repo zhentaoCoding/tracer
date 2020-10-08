@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-from app01 import views
+from web.views import account
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^app01/', include(('app01.urls', 'app01'), namespace='app01')),
-    url(r'^', include('web.urls')),
+    url(r'^register/$', account.register, name='register'),
+    url(r'^send/sms/$', account.send_sms, name='send_sms')
 ]

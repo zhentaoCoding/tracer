@@ -18,7 +18,7 @@ from django.conf.urls import url, include
 from app01 import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^app01/', include(('app01.urls', 'app01'), namespace='app01')),
-    url(r'^', include('web.urls')),
+    url(r'^send/sms', views.send_sms),
+    url(r'^register/', views.register, name='register'),
+
 ]
